@@ -175,6 +175,14 @@ main {
 }
 
 @media screen and (max-width: 720px) {
+  main {
+    height: 100%;
+  }
+
+  .hero {
+    height: 100%;
+  }
+
   .hero .flex-col:first-of-type {
     width: 100%;
     order: 2;

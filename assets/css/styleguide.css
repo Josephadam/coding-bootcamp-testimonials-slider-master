@@ -130,8 +130,8 @@ img.overlay {
 
 @media screen and (max-width: 720px) {
   .section {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
   }
 }
 
