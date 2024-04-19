@@ -1,0 +1,218 @@
+main {
+  height: 100vh;
+  width: 100%;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero .flex-col:first-of-type {
+  width: 52%;
+  padding: 4rem 0 4rem 0;
+  flex-direction: column;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 4;
+  order: 1;
+}
+
+.hero .flex-col:first-of-type .info {
+  display: flex;
+  gap: 0.5rem;
+  transition: 1s ease-in-out;
+}
+
+.hero .flex-col:first-of-type .info p span {
+  color: var(--Grayish-Blue);
+  line-height: 1.1;
+  font-weight: 500;
+  font-family: "inter med";
+  font-size: 1.1rem;
+}
+
+.hero .flex-col:nth-of-type(2) {
+  width: 57%;
+  position: absolute;
+  right: 0;
+  order: 2;
+}
+
+.hero .left-blob {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.hero .left-blob svg {
+  width: 200%;
+  height: auto;
+}
+
+.hero .flex-col:first-of-type {
+  background-image: url("/assets/images/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-position: 97px 15px;
+  background-size: 100px;
+}
+
+.thumbnail {
+  position: relative;
+  height: 100%; /* Define a specific height if necessary */
+  width: 100%;
+}
+
+.bg {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.bg::before {
+  content: "";
+  display: block;
+  padding-top: 94%;
+}
+
+.front-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 77%; /* Full width as per your requirement */
+  height: 77%; /* Full height as per your requirement */
+  z-index: 2;
+}
+
+.front-img img {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 15px 15px -5px rgba(123, 123, 123, 0.4);
+}
+
+.hidden {
+  display: none; /* Ensured by JavaScript */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear; /* Adjust timing as needed */
+}
+.active {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes FadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none; /* Ensured by JavaScript */
+  visibility: hidden;
+  opacity: 0;
+  animation: FadeOut 2s forwards; /* Use forwards to maintain the last keyframe state */
+}
+
+.active {
+  display: flex; /* Ensured by JavaScript */
+  visibility: visible;
+  opacity: 1;
+  animation: FadeIn 2s forwards;
+}
+
+.button-container {
+  position: absolute;
+  bottom: -23px; /* Adjusxxt this value as needed to fit your design */
+  width: 100%;
+  padding-left: 2.4rem;
+}
+.button {
+  padding: 1.1rem 1.4rem;
+  border-radius: 2rem;
+  background-color: var(--color-light);
+  display: flex;
+  gap: 1.8rem;
+  box-shadow: 0 10px 8px -4px rgba(136, 136, 136, 0.4);
+  width: fit-content;
+}
+
+.button svg {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.cls-3 {
+  transition: 1s ease-in-out; /* Apply transition here */
+}
+
+.button svg:hover .cls-3 {
+  fill: black; /* Changes the fill color to black on hover */
+}
+
+@media screen and (max-width: 720px) {
+  .hero .flex-col:first-of-type {
+    width: 100%;
+    order: 2;
+    text-align: center;
+  }
+
+  .hero .flex-col:first-of-type .info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero .flex-col:first-of-type .info p span {
+    font-size: 0.9rem;
+  }
+
+  .hero .flex-col:first-of-type {
+    background-size: 60px;
+    background-position: 97px 32px;
+  }
+
+  .hero .flex-col:nth-of-type(2) {
+    position: relative;
+    width: 100%;
+    order: 1;
+  }
+
+  .button-container {
+    padding-left: 0rem;
+  }
+
+  .button {
+    justify-content: center;
+    margin: auto;
+    padding: 0.9rem 1.1rem;
+  }
+
+  .hero .left-blob svg {
+    width: 100%;
+    height: auto;
+  }
+}
